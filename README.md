@@ -1,8 +1,7 @@
 # Dreaming Spanish aspect fix
 
 Chrome extension that un-squishes Dreaming Spanish videos whose 2:1 content is
-decoded as a 16:9 frame (faces look too thin). See
-`../dreaming-spanish-bug-report.md` for the diagnosis.
+decoded as a 16:9 frame (faces look too thin).
 
 ## How it works
 
