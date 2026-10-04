@@ -1,0 +1,27 @@
+/* Inert until content.js adds .ds-aspect-fix to <html>. */
+
+/* windowed */
+html.ds-aspect-fix .embed-responsive-2by1::before { padding-top: 50% !important; }
+html.ds-aspect-fix .embed-responsive-2by1 { aspect-ratio: 2 / 1 !important; height: auto !important; }
+html.ds-aspect-fix .ds-shaka-player__video { object-fit: fill !important; }
+
+/* fullscreen: separate rules on purpose — an unsupported pseudo in a shared
+   selector list would drop the whole rule. */
+html.ds-aspect-fix :fullscreen .ds-shaka-player__video {
+  position: fixed !important;
+  top: 50% !important; left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: min(100vw, 200vh) !important;   /* widest 2:1 that fits */
+  height: min(50vw, 100vh) !important;   /* = width / 2 */
+  object-fit: fill !important;
+  background: #000 !important;
+}
+html.ds-aspect-fix :-webkit-full-screen .ds-shaka-player__video {
+  position: fixed !important;
+  top: 50% !important; left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: min(100vw, 200vh) !important;
+  height: min(50vw, 100vh) !important;
+  object-fit: fill !important;
+  background: #000 !important;
+}

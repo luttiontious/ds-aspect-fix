@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Dreaming Spanish aspect fix",
+  "version": "1.0",
+  "description": "Un-squishes 2:1 videos that the player decodes as 16:9.",
+  "permissions": ["storage"],
+  "action": { "default_title": "Toggle aspect fix for this video" },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["https://*.dreaming.com/*", "https://*.dreamingspanish.com/*"],
+    "js": ["content.js"],
+    "css": ["fix.css"],
+    "run_at": "document_idle"
+  }]
+}
